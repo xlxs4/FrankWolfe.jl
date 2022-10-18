@@ -13,7 +13,6 @@ end
     f(x) = norm(x)^2
     function grad!(storage, x)
         @. storage = 2x
-        return nothing
     end
     lmo_prob = FrankWolfe.ProbabilitySimplexOracle(4)
     x0 = FrankWolfe.compute_extreme_point(lmo_prob, zeros(10))
@@ -83,7 +82,6 @@ end
     f(x) = norm(x)^2
     function grad!(storage, x)
         @. storage = 2x
-        return nothing
     end
     lmo_prob = FrankWolfe.ProbabilitySimplexOracle(4)
     lmo = FrankWolfe.TrackingLMO(lmo_prob)
